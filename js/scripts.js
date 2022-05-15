@@ -86,6 +86,18 @@ window.addEventListener('DOMContentLoaded', event => {
         rewind     : true,
     }
 
-    const splideFE = new Splide( '#skill-frontend', {}).mount();
-    const splideBE = new Splide( '#skill-backend', {}).mount();
+    const splideFE = new Splide( '#skillFrontend', {}).mount();
+    const splideBE = new Splide('#skillBackend', {}).mount();
+    
+    // Certificate Modal
+    let certificateModal = document.getElementById('certificateModal');
+    certificateModal, addEventListener('show.bs.modal', function (event) {
+        let related = event.relatedTarget.lastElementChild;
+        let modalTitle = document.getElementById('certificateModalTitle');
+        let modalPicture = document.getElementById('certificateModalPicture');
+
+        modalTitle.innerHTML = related.getAttribute('alt');
+        modalPicture.src = related.getAttribute('src');
+    });
+
 });
