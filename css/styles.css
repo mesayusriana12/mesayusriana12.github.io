@@ -10435,7 +10435,7 @@ html {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
@@ -10623,7 +10623,7 @@ html {
   padding: 1rem;
 }
 .portfolio-modal .portfolio-modal-title {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   line-height: 2rem;
 }
 .portfolio-modal .certificate-modal-title {
@@ -10632,11 +10632,11 @@ html {
 }
 @media (min-width: 992px) {
   .portfolio-modal .portfolio-modal-title {
-    font-size: 3rem;
+    font-size: 2.75rem;
     line-height: 2.5rem;
   }
   .portfolio-modal .certificate-modal-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     line-height: 2rem;
   }
 }
