@@ -10607,6 +10607,9 @@ html {
   opacity: 0;
   background-color: rgba(44, 62, 80, 0.8);
 }
+.portfolio .portfolio-item {
+  max-height: 180px;
+}
 .portfolio .certificate-item {
   max-height: 282px;
 }

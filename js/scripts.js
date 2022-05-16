@@ -51,6 +51,35 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Carousel Item HTML
+    /**
+     * @param {string} src
+     * @param {string} alt
+     * @returns {string}
+     */
+    carouselItem = (src, active = false, alt = 'Image Project 1') =>
+        `<div class="carousel-item ${active ? 'active' : ''}">
+            <img src="${src}" class="d-block w-100 rounded" alt="${alt}">
+        </div>`;
+    
+    // Carousel Indicator HTML
+    /**
+     * @param {string} target
+     * @param {int} index
+     * @returns {string}
+     */
+    carouselIndicator = (target, index = 0) =>
+        `<button type="button" data-bs-target="#${target}" data-bs-slide-to="${index}" aria-label="Slide ${index + 1}" ${index === 0 ? 'class="active" aria-current="true"' : ''} ></button>`;
+    
+    // Badge HTML
+    /**
+     * @param {string} text
+     * @param {string} color
+     * @returns {string}
+     */
+    badgeItem = (text, color = 'info') =>
+        `<span class="badge bg-${color} mx-2">${text}</span>`;
+
     // Social media links
     const socialMediaButton = document.querySelectorAll('.scm-btn');
     const socialMediaLink = [
@@ -98,6 +127,36 @@ window.addEventListener('DOMContentLoaded', event => {
 
         modalTitle.innerHTML = related.getAttribute('alt');
         modalPicture.src = related.getAttribute('src');
+    });
+
+    // Porject Modal
+    let projectModal = document.getElementById('projectModal');
+    projectModal, addEventListener('show.bs.modal', function (event) {
+        let htmlBadge = '';
+        let htmlCarouselItem = '';
+        let htmlCarouselIndicator = '';
+
+        let related = event.relatedTarget;
+        let modalTitle = document.getElementById('projectModalTitle');
+        let modalPicture = document.getElementById('projectModalPicture');
+        let modalCarouselIndicator = document.getElementById('projectModalCarouselIndicator');
+        let modalBadge = document.getElementById('projectModalBadge');
+        let modalDescription = document.getElementById('projectModalDescription');
+
+        related.getAttribute('data-badge').split('|').forEach((badge) => {
+            htmlBadge += badge ? badgeItem(badge) : '';
+        });
+
+        related.getAttribute('data-picture').split('|').forEach((src, iterator) => {
+            htmlCarouselItem += src ? carouselItem(`./assets/img/project/${src}`, iterator === 0) : '';
+            htmlCarouselIndicator += src ? carouselIndicator('projectModalCarousel', iterator) : '';
+        });
+        
+        modalTitle.innerHTML = related.getAttribute('data-title');
+        modalPicture.innerHTML = htmlCarouselItem;
+        modalCarouselIndicator.innerHTML = htmlCarouselIndicator;
+        modalBadge.innerHTML = htmlBadge;
+        modalDescription.innerHTML = related.getAttribute('data-description');
     });
 
 });
