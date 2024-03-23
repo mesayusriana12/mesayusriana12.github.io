@@ -103,7 +103,7 @@ window.addEventListener('DOMContentLoaded', event => {
         height     : '10rem',
         perPage    : 4,
         breakpoints: {
-            700: {
+            768: {
                 perPage: 2,
             },
         },
@@ -112,6 +112,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     const splideFE = new Splide( '#skillFrontend', {}).mount();
     const splideBE = new Splide('#skillBackend', {}).mount();
+    const splideTO = new Splide('#skillTools', {}).mount();
     
     // Certificate Modal
     let certificateModal = document.getElementById('certificateModal');
