@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', event => {
         'https://gitlab.com/mesayusriana12',
         'https://www.linkedin.com/in/mesayusriana/',
         'https://wa.me/+6282118207806',
-        'https://t.me/mesayusriana12git',
+        'https://t.me/mesayusriana12',
         'https://www.instagram.com/mesayusriana12/',
         'mailto:mesayusriana12@gmail.com'
     ];
