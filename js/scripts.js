@@ -100,14 +100,14 @@ window.addEventListener('DOMContentLoaded', event => {
     Splide.defaults = {
         snap: true,
         autoplay: true,
-        height     : '10rem',
-        perPage    : 4,
+        height: '10rem',
+        perPage: 4,
         breakpoints: {
             768: {
                 perPage: 2,
             },
         },
-        rewind     : true,
+        rewind: true,
     }
 
     const splideFE = new Splide( '#skillFrontend', {}).mount();
@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', event => {
         modalPicture.src = related.getAttribute('src');
     });
 
-    // Porject Modal
+    // Project Modal
     let projectModal = document.getElementById('projectModal');
     projectModal, addEventListener('show.bs.modal', function (event) {
         let htmlBadge = '';
