@@ -209,7 +209,7 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     const frontendSkill = [
-        { thumbnail: 'frontend/Javascript.png', title: 'JavaScript' },
+        { thumbnail: 'frontend/JavaScript.png', title: 'JavaScript' },
         { thumbnail: 'frontend/Vue.js.png', title: 'Vue.js' },
         { thumbnail: 'frontend/Nuxt JS.png', title: 'Nuxt JS' },
         { thumbnail: 'frontend/React.png', title: 'React' },
